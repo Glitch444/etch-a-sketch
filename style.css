@@ -36,7 +36,9 @@ body {
 }
 
 .buttons {
-    display: flex;    
+    display: flex;  
+    flex:1;
+    max-height: 50px;  
     padding: 5px;
     gap: 20px;
 }
