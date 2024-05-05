@@ -3,8 +3,7 @@ const resetBtn = document.getElementById("reset-btn");
 const changeGridBtn = document.getElementById("change-grid-btn");
 let userInputOut = 16;
 
-let newDivRow;
-let newDivColumn;
+
 let holdInterval;
 let isMouseDown = false;
 
@@ -12,7 +11,7 @@ container.addEventListener("DOMContentLoaded", makeGrid(userInputOut));
 
 function makeGrid(userInputOut) {
     for (let i = 0; i < userInputOut; i++) {
-        newDivRow = document.createElement("div");
+        const newDivRow = document.createElement("div");
         newDivRow.classList.add("rows");
         container.appendChild(newDivRow);
 
@@ -54,6 +53,8 @@ function makeGrid(userInputOut) {
 };
 
 
+
+ 
 
 
 changeGridBtn.addEventListener ("click", function () {

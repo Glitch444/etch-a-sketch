@@ -5,23 +5,23 @@ html{
     justify-content: center;
        
     height: 100%;
-    margin: 0;
+    
 }
 
 body {
-    margin: 50px;
+    margin: 10px;
     background-color: white;
+    
     flex: 1;
-
     display: flex;
     flex-direction: column;
 }
 
 #container {
     flex: 1;
-
     display: flex;
     flex-direction: column;
+    margin: 5px;
 }
 
 .rows {
@@ -31,26 +31,28 @@ body {
 
 .columns {
   flex: 1;
-
-  border: 0.5px dotted black;
+  border: 0.1px dotted black;
 }
 
 .buttons {
     display: flex;  
     flex:1;
-    max-height: 50px;  
-    padding: 5px;
-    gap: 20px;
+    max-height: 20px;  
+    margin: 5px;
+    gap: 5px;
+    
 }
 
 button {
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
 
-    padding: 10px 50px;
+    padding: 0px 20px;
     background-color: rgb(201, 201, 201);
     border-radius: 15px;
     border-style: none;
+
+    
 }
 
 button:hover {
