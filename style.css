@@ -1,27 +1,83 @@
-html{
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-       
-    height: 100%;
-    
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 10px;
-    background-color: white;
+    background-color:#c7d2fe;
+
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    background-color: #818cf8;
     
-    flex: 1;
+    margin: 2px;
+    padding: 10px;    
+    border: 5px solid black;
+    border-radius: 10px;
+    
+    height: 90vh;
+    width: 100vh;
+
     display: flex;
     flex-direction: column;
 }
 
-#container {
+
+/* buttons */
+.buttons {
+    background-color: white;
+    margin: 8px 0;
+    padding: 6px;
+    border-radius: 10px;
+    border: 2px solid black;   
+
+    display: flex;  
+   
+    gap: 10px;  
+}
+
+button, 
+#random-colour-btn-container {
+    background-color: #818cf8;
+    padding: 5px 20px;
+    
+    border-radius: 15px;
+    border-style: none;
+    color: white
+}
+
+button:hover,
+#random-colour-btn-container:hover {
+    background-color: #c7d2fe;
+}
+
+#random-colour-btn-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* draw area */
+#sketch-container {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    padding: 5px;
+
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
 .rows {
@@ -30,33 +86,5 @@ body {
 }
 
 .columns {
-  flex: 1;
-  border: 0.1px dotted black;
+    flex: 1;
 }
-
-.buttons {
-    display: flex;  
-    flex:1;
-    max-height: 20px;  
-    margin: 5px;
-    gap: 5px;
-    
-}
-
-button {
-    font-size: 12px;
-    font-weight: bold;
-
-    padding: 0px 20px;
-    background-color: rgb(201, 201, 201);
-    border-radius: 15px;
-    border-style: none;
-
-    
-}
-
-button:hover {
-    background-color: red;
-}
-
-

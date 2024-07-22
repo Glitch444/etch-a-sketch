@@ -1,4 +1,4 @@
-const container = document.getElementById("container");
+const container = document.getElementById("sketch-container");
 const resetBtn = document.getElementById("reset-btn");
 const changeGridBtn = document.getElementById("change-grid-btn");
 const randomColourBtn = document.getElementById("random-colour-btn");
@@ -11,6 +11,8 @@ let randomColourBtnDown = false;
 document.addEventListener("DOMContentLoaded", makeGrid(userInputOut));
 
 function makeGrid(userInputOut) {
+    container.innerHTML = "";
+
     for (let i = 0; i < userInputOut; i++) {
         const newDivRow = document.createElement("div");
         newDivRow.classList.add("rows");
@@ -28,9 +30,8 @@ function makeGrid(userInputOut) {
 // draw
 container.addEventListener("mousedown", function (event) {
     if (event.target.classList.contains("columns")) {
-    isMouseDown = true;
-    colorBox(event.target)
-    holdInterval = setInterval(colorBox(event.target), 100);
+        isMouseDown = true;
+        colorBox(event.target);       
     }       
 });
 
@@ -41,9 +42,8 @@ container.addEventListener("mouseover", function (event) {
 });
 
 document.addEventListener("mouseup", function () {
-    isMouseDown= false;
-    clearInterval(holdInterval);
-     
+    isMouseDown = false;
+   
 });
 
 function colorBox (element){
