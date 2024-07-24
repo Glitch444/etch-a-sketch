@@ -1,12 +1,27 @@
+// Dropdown menu
+const dropDownMenuContainer = document.querySelector(".dropdown-menu-container")
+const dropdownMenuItems = document.querySelectorAll(".dropdown-menu-items");
+
+dropDownMenuContainer.addEventListener("mouseover", show);  
+dropDownMenuContainer.addEventListener("mouseout", hide);
+
+function show() {
+    dropdownMenuItems.forEach(item => item.style.display = "flex");
+}
+function hide() {
+    dropdownMenuItems.forEach(item => item.style.display = "none");
+}
+
+
 const container = document.getElementById("sketch-container");
 const resetBtn = document.getElementById("reset-btn");
 const changeGridBtn = document.getElementById("change-grid-btn");
 const randomColourBtn = document.getElementById("random-colour-btn");
 
 let userInputOut = 16;
-let holdInterval;
 let isMouseDown = false;
 let randomColourBtnDown = false;
+let colour;
 
 document.addEventListener("DOMContentLoaded", makeGrid(userInputOut));
 
@@ -52,25 +67,53 @@ function colorBox (element){
         const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`
         
         element.style.backgroundColor = rndCol;
+    } 
+
+
+    else if (isMouseDown &&  colour === "blue") {
+        element.style.backgroundColor = "blue"
     }
+
+    else if (isMouseDown &&  colour === "green") {
+        element.style.backgroundColor = "green"
+    }
+
+    else if (isMouseDown &&  colour === "yellow") {
+        element.style.backgroundColor = "yellow"
+    }
+    else if (isMouseDown &&  colour === "purple") {
+        element.style.backgroundColor = "purple"
+    }
+    else if (isMouseDown &&  colour === "red") {
+        element.style.backgroundColor = "red"
+    }
+    
     else if (isMouseDown) {
         element.style.backgroundColor = "red";
     }
 
 }
 
+// change colour
+dropdownMenuItems.forEach(item => {
+    item.addEventListener("click", changeColour)
+});
 
-// random color
-function random (number) {
-    return Math.floor(Math.random()*number +1)
+function changeColour (event){
+    colour = event.target.textContent;
 }
 
+
+
+// random colour
+function random (number) {
+    return Math.floor(Math.random()*number) +1;
+}
 
 randomColourBtn.addEventListener("change", function () {
 
     if(this.checked) {
         randomColourBtnDown = true;
-
     }
     else {
         randomColourBtnDown = false;
@@ -90,8 +133,6 @@ changeGridBtn.addEventListener ("click", function () {
     container.innerHTML = "";
     makeGrid(userInputOut);
 });
-
-
 
 
 
